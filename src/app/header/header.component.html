@@ -16,7 +16,7 @@
       <mat-nav-list>
   
         <a mat-list-item [routerLink]="'/accounts'"> Home </a>
-        <a mat-list-item [routerLink]="'/weaver-main'"> Weavers </a>
+        <a mat-list-item [routerLink]="'/weaver-main'" routerLinkActive="active" (click)="sidenav.close()"> Weavers </a>
         <a mat-list-item [routerLink]="'/contacts'"> Looms </a>
         <a mat-list-item [routerLink]="'/activities'"> Cone/Jari inward </a>
         <a mat-list-item [routerLink]="'/create-contact'"> Stock </a>
@@ -27,8 +27,9 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <div style="height: 88vh;">
+        <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
   
-  <router-outlet></router-outlet>
+  

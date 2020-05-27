@@ -12,19 +12,22 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./weaver-main.component.css']
 })
 export class WeaverMainComponent {
-  displayedColumns = ['id', 'name', 'progress', 'color'];
+  displayedColumns = ['id', 'weaverName', 'phone', 'address', 'joinedDate', 'nickName'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
+
+    console.log("weaver comp opening!!!")
     // Create 100 users
-    const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
+    const weavers: UserData[] = [];
+    for (let i = 1; i <= 100; i++) { weavers.push(createNewUser(i)); }
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    console.log(weavers)
+    this.dataSource = new MatTableDataSource(weavers);
   }
 
   /**
@@ -45,15 +48,15 @@ export class WeaverMainComponent {
 
 /** Builds and returns a new User. */
 function createNewUser(id: number): UserData {
-  const name =
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+  
 
   return {
     id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    weaverName: "mothi",
+    phone: "8939145189",
+    address: "elampillai",
+    joinedDate: "10-10-2020",
+    nickName: "msampath"
   };
 }
 
@@ -66,9 +69,11 @@ const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
 
 export interface UserData {
   id: string;
-  name: string;
-  progress: string;
-  color: string;
+  weaverName: string;
+  phone: string;
+  address: string;
+  joinedDate: string;
+  nickName: string;
 }
 
 

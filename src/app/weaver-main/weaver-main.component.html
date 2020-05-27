@@ -1,8 +1,13 @@
+
 <div class="example-header">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  <button mat-raised-button class="button-position">Add Weaver</button>  
+  <mat-form-field class="serch-pos">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search By Any Field">
     </mat-form-field>
+     
+    
   </div>
+ 
   
   <div class="example-container mat-elevation-z8">
   
@@ -15,21 +20,33 @@
       </ng-container>
   
       <!-- Progress Column -->
-      <ng-container matColumnDef="progress">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+      <ng-container matColumnDef="weaverName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Weaver Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.weaverName}} </mat-cell>
       </ng-container>
   
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Phone </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.phone}} </mat-cell>
       </ng-container>
   
       <!-- Color Column -->
-      <ng-container matColumnDef="color">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
-        <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.address}} </mat-cell>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="joinedDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Joined Date </mat-header-cell>
+        <mat-cell *matCellDef="let row" > {{row.joinedDate}} </mat-cell>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="nickName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nick Name </mat-header-cell>
+        <mat-cell *matCellDef="let row" > {{row.nickName}} </mat-cell>
       </ng-container>
   
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
